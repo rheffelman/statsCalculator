@@ -64,6 +64,5 @@ int greatestCommonDivisor(vector<int> nums)
 //--
 bool isSorted(vector<int> nums)
 {
-    // TODO: Student 4
     return false;
 }
