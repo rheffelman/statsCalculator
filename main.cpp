@@ -54,6 +54,10 @@ int numberGreaterThanAverage(vector<int> nums)
 {
     int sum = 0;
     int count = 0;
+    for(int num:nums) {
+        sum += num;
+    }
+    float avg = sum / nums.size();
     return count;
 }
 //--
