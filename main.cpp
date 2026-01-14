@@ -52,8 +52,9 @@ int findMostFrequentNumber(vector<int> nums)
 //--
 int numberGreaterThanAverage(vector<int> nums)
 {
-    // TODO: Student 2
-    return 0;
+    int sum = 0;
+    int count = 0;
+    return count;
 }
 //--
 int greatestCommonDivisor(vector<int> nums)
