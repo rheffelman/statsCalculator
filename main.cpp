@@ -58,13 +58,18 @@ int numberGreaterThanAverage(vector<int> nums)
 //--
 int greatestCommonDivisor(vector<int> nums)
 {
+    //This if statement asks if the vector is empty, then quit the program.
     if (nums.empty()) return 0;
 
+    //greatCD is a placeholder name for this int value
     int greatCD = nums[0];
+
+    //This loop iterates through all the numbers in the vector 
     for (int i = 1; i < nums.size(); i++) {
+        //This while loop continues until nums[i] is equal to 0
         while(nums[i] !=0) {
             int temp = nums[i];
-            nums[i] = greatCD / nums[i];
+            nums[i] = greatCD % nums[i];
             greatCD = temp;
         }
     }
