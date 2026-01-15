@@ -1,5 +1,7 @@
 #include <iostream>
 #include <vector>
+#include <algorithm>
+#include <cassert>
 using namespace std;
 
 vector<int> getNumbers();
@@ -47,8 +49,40 @@ vector<int> getNumbers()
 //--
 int findMostFrequentNumber(vector<int> nums)
 {
-    // TODO: Student 1
-    return -1;
+    assert(nums.size());
+    sort(nums.begin(), nums.end());
+
+    int frequency = 1;
+    int most_frequent_value = nums.back();
+    int count = 1;
+
+    while (nums.size() > 1)
+    {
+        int curr = nums.back();
+        nums.pop_back();
+        int next = nums.back();
+
+        if (next == curr)
+        {
+            count++;
+        }
+        else 
+        {
+            if (count > frequency)
+            {
+                frequency = count;
+                most_frequent_value = curr;
+            }
+            count = 1;
+        }
+    }
+
+    if (count > frequency)
+    {
+        most_frequent_value = nums.back();
+    }
+
+    return most_frequent_value;
 }
 //--
 int numberGreaterThanAverage(vector<int> nums)
