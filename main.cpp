@@ -57,9 +57,9 @@ int findMostFrequentNumber(vector<int> nums)
 
     while (nums.size() > 1)
     {
-        int cur = nums.back();
+        int curr = nums.back();
         nums.pop_back();
-        int nxt = nums.back();
+        int next = nums.back();
 
         if (next == curr)
         {
