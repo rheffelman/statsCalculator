@@ -73,7 +73,7 @@ int greatestCommonDivisor(vector<int> nums)
             greatCD = temp;
         }
     }
-    return 1;
+    return greatCD;
 }
 //--
 bool isSorted(vector<int> nums)
