@@ -40,8 +40,10 @@ vector<int> getNumbers()
     while (cin >> num && num != 0)
     {
         nums.push_back(num);
+        cout << num << endl;
     }
     return nums;
+
 }
 //--
 int findMostFrequentNumber(vector<int> nums)
@@ -64,5 +66,20 @@ int greatestCommonDivisor(vector<int> nums)
 //--
 bool isSorted(vector<int> nums)
 {
-    return false;
+    bool retVal;
+    enum Direction {UNDEFINED, ASCENDING, DESCENDING};
+    Direction dir = UNDEFINED;
+    
+    
+    if (nums.size() <= 1)
+    {
+        return true;
+    }
+
+    for(int i = 0; i < nums.size() - 1; i++)
+    {
+        
+    }
+
+    return retVal;
 }
