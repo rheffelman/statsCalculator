@@ -51,8 +51,8 @@ int findMostFrequentNumber(vector<int> nums)
     assert(nums.size());
     sort(nums.begin(), nums.end());
 
-    int biggest_count = 1;
-    int biggest_key = nums.back();
+    int frequency = 1;
+    int most_frequent_value = nums.back();
     int count = 1;
 
     while (nums.size() > 1)
@@ -67,21 +67,21 @@ int findMostFrequentNumber(vector<int> nums)
         }
         else 
         {
-            if (count > biggest_count)
+            if (count > frequency)
             {
-                biggest_count = count;
-                biggest_key = curr;
+                frequency = count;
+                most_frequent_value = curr;
             }
             count = 1;
         }
     }
 
-    if (count > biggest_count)
+    if (count > frequency)
     {
-        biggest_key = nums.back();
+        most_frequent_value = nums.back();
     }
 
-    return biggest_key;
+    return most_frequent_value;
 }
 //--
 int numberGreaterThanAverage(vector<int> nums)
