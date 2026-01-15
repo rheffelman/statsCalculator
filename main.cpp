@@ -66,7 +66,7 @@ int greatestCommonDivisor(vector<int> nums)
 //--
 bool isSorted(vector<int> nums)
 {
-    bool retVal;
+    bool retVal = true;
     enum Direction {UNDEFINED, ASCENDING, DESCENDING};
     Direction dir = UNDEFINED;
     
@@ -78,7 +78,32 @@ bool isSorted(vector<int> nums)
 
     for(int i = 0; i < nums.size() - 1; i++)
     {
-        
+        if(dir == UNDEFINED && nums[i] != nums[i + 1])
+        {
+            if (nums[i] > nums[i+1])
+            {
+                dir = DESCENDING;
+            }
+            else
+            {
+                dir = ASCENDING;
+            }
+        }
+        else if (dir != UNDEFINED && nums[i] != nums[i+1])
+        {
+            if(dir == DESCENDING && nums[i] < nums[i + 1])
+            {
+                return false;
+            }
+            else if (dir == ASCENDING && nums[i] > nums[i + 1])
+            {
+                return false;
+            }
+            else
+            {
+                retVal = true;
+            }
+        }
     }
 
     return retVal;
