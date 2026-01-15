@@ -40,7 +40,6 @@ vector<int> getNumbers()
     while (cin >> num && num != 0)
     {
         nums.push_back(num);
-        cout << num << endl;
     }
     return nums;
 
@@ -66,19 +65,22 @@ int greatestCommonDivisor(vector<int> nums)
 //--
 bool isSorted(vector<int> nums)
 {
+    //Create enum to keep track of direction
     enum Direction {UNDEFINED, ASCENDING, DESCENDING};
     Direction dir = UNDEFINED;
     
-    
+    //Check if the size of nums less than or equal to 1
     if (nums.size() <= 1)
     {
         return true;
     }
-
+    //loop through nums, -1 because we check ahead with nums[i+1]
     for(int i = 0; i < nums.size() - 1; i++)
     {
+        //Check if dir is defined and if the elements are equal
         if(dir == UNDEFINED && nums[i] != nums[i + 1])
         {
+            //assign dir value
             if (nums[i] > nums[i+1])
             {
                 dir = DESCENDING;
@@ -90,6 +92,7 @@ bool isSorted(vector<int> nums)
         }
         else if (dir != UNDEFINED && nums[i] != nums[i+1])
         {
+            //check if current i defies the current assined value on dir
             if(dir == DESCENDING && nums[i] < nums[i + 1])
             {
                 return false;
